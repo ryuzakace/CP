@@ -1,0 +1,36 @@
+'''
+2
+2
+0 0
+0 0
+2
+0 1
+1 0
+'''
+
+test = int(input())
+
+for t in range(test):
+    s = int(input())
+    li = []
+    fl = 0
+    for i in range(s):
+        l = input().split()
+        li.extend(l)
+    for i in range(s*s):
+        try:
+            if li[i] == li[i+1] and (i+1%s)==0:
+                fl = 1
+                break
+        except:
+            pass
+        try:
+            if li[i] == li[i+s]:
+                fl = 1
+                break
+        except:
+            pass
+    if fl:
+        print('No')
+    else:
+        print('Yes')
